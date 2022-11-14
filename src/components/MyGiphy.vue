@@ -1,8 +1,7 @@
 <template>
   <div v-for="gif in gifs">
-    {{ gif.title }}
-    <!-- Cross origin issue on the image, will fix this later -->
-    <!-- <img :src="gif.embed_url" /> -->
+    <span>{{ gif.title }}</span>
+    <a :href="gif.embed_url" target="_blank">View GIF</a>
   </div>
 </template>
 
@@ -37,4 +36,18 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+a {
+  color: #4caf50;
+}
+
+div {
+  padding: 2rem;
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+</style>
